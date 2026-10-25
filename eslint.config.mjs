@@ -13,7 +13,7 @@ export default [
     rules: {
       'no-var': 'error',
       'prefer-const': 'error',
-      'no-console': 'warn',
+      'no-console': 'off',
     },
   },
 ];

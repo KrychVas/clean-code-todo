@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,11 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "prettier": "^3.9.10"
+  },
+  "lint-staged": {
+    "*.{js,css,html,json,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

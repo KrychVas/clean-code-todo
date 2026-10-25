@@ -104,7 +104,7 @@ const deleteTask = function () {
 };
 
 //Mark task completed
-var taskCompleted = function () {
+const taskCompleted = function () {
   console.log('Complete Task...');
 
   //Append the task list item to the #completed-tasks
@@ -113,7 +113,7 @@ var taskCompleted = function () {
   bindTaskEvents(listItem, taskIncomplete);
 };
 
-var taskIncomplete = function () {
+const taskIncomplete = function () {
   console.log('Incomplete Task...');
   //Mark task as incomplete.
   //When the checkbox is unchecked
@@ -134,7 +134,7 @@ addButton.onclick = addTask;
 addButton.addEventListener('click', addTask);
 addButton.addEventListener('click', ajaxRequest);
 
-var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
+const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   console.log('bind list item events');
   //select ListItems children
   const checkBox = taskListItem.querySelector('input[type=checkbox]');
@@ -151,15 +151,15 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 
 //cycle over incompleteTaskHolder ul list items
 //for each list item
-for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
+for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
   //bind events to list items chldren(tasksCompleted)
   bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
 
 //cycle over completedTasksHolder ul list items
-for (var i = 0; i < completedTasksHolder.children.length; i++) {
+for (let j = 0; j < completedTasksHolder.children.length; j++) {
   //bind events to list items chldren(tasksIncompleted)
-  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+  bindTaskEvents(completedTasksHolder.children[j], taskIncomplete);
 }
 
 // Issues with usability don't get seen until they are in front of a human tester.
